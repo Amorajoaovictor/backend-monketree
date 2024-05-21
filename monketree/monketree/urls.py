@@ -18,13 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from poll.views import UserViewSet
+from poll.views import UserViewSet, BlockViewSet, ClickViewSet, TreeViewSet
+
+
 
 router = DefaultRouter()
 
 router.register(r'user', UserViewSet, basename='user')
-
-
+router.register(r'block', BlockViewSet, basename='block')
+router.register(r'click', ClickViewSet, basename='click')
+router.register(r'tree', TreeViewSet, basename='tree')
 
 
 urlpatterns = [
